@@ -30,6 +30,9 @@ def show_data(request,id=None):
         else:
             form=Contact_Form()
             data=Contact.objects.all()
+            for contact in data:
+                c=list(contact.country)
+                print(c)
             return render(request,'contact.html',{'form':form, 'datas':data})     
     elif id is not None:
          if request.method=='POST':
@@ -39,7 +42,7 @@ def show_data(request,id=None):
             formdata.save()
             return redirect('show_data')
          else:
-            edata=Contact.objects.get(id=id)
+            edata=Contact.objects.all(id=id)
             form=Contact_Form(instance=edata)
             data=Contact.objects.all()
             return render(request,'contact.html',{'form':form, 'edata':edata,'datas':data})

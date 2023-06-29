@@ -11,5 +11,6 @@ l1.extend(l3)
 print(l1)
 
 ls=['a','b']
-ot=', '.join(ls)
-print(ot)
+
+for l in ls:
+    print(l)
