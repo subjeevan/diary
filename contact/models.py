@@ -8,4 +8,4 @@ class Contact(models.Model):
     mobile=models.IntegerField()
     message=models.CharField(max_length=40, default='')
     gender=models.CharField(max_length=1,default='')
-    country=models.JSONField()
+    country=models.CharField(max_length=100,default='')
