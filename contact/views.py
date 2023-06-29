@@ -24,15 +24,13 @@ def show_data(request,id=None):
         if request.method=='POST':
             formdata=Contact_Form(request.POST)
             formdata.is_valid()
-            print(formdata)
             formdata.save()
             return redirect('show_data')
         else:
             form=Contact_Form()
             data=Contact.objects.all()
-            for contact in data:
-                c=list(contact.country)
-                print(c)
+            for d in data:
+                print(', '.join(d.country))
             return render(request,'contact.html',{'form':form, 'datas':data})     
     elif id is not None:
          if request.method=='POST':
