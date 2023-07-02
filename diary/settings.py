@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'modelform',
     'contact',
     'contactapi',
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -117,7 +119,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript, Images)',GET'
+'POST',
+
+
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
@@ -133,3 +138,17 @@ MEDIA_URL='/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_METHODS=[
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS'   
+
+]
+
+CORS_ALLOWED_ORIGINS =[
+    'http://localhost:3000'
+]
