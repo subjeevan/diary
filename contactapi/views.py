@@ -6,8 +6,9 @@ from rest_framework import generics
 # Create your views here.
 
 def showcontactapi(request):
-    contact=Contact.objects.get()
-    return HttpResponse("wElocme ")
+    contact=Contact.objects.get(id=1)
+    
+    return render(request, 'test.html',{'contact':contact})
 
 class Datalist(generics.ListCreateAPIView):
     queryset= Contact.objects.all()
