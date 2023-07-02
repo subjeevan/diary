@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'collection',
     'modelform',
     'contact',
+    'contactapi',
 ]
 
 MIDDLEWARE = [

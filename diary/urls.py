@@ -40,3 +40,10 @@ contact=[
 ]
 
 urlpatterns.extend(contact)
+
+contactapi=[
+    path('contactapi/',include('contactapi.urls')),
+]
+
+urlpatterns.extend(contactapi)
+
