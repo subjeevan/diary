@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', form, name='form'),
     path('collection/',col_form,name='col_form'),
+    path('postman/',include('postman.urls')),
 ]
 
 from modelform.views import delform,editform
