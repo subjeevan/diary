@@ -19,7 +19,7 @@ from django.urls import path,include
 from clients.views import form
 from collection.views import col_form
 from modelform.views import homepage
-
+from apitodjango.views import apitodjango
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', form, name='form'),
@@ -33,6 +33,7 @@ modelform=[
     path('homepage/',homepage,name='homepage'),
     path('delform/<int:id>/', delform, name='delform'),
     path('editform/<int:id>/',editform,name='editform'),
+    path('apitodjango/',apitodjango,name='apitodjango'),
 ]
 urlpatterns.extend(modelform)
 
@@ -44,7 +45,7 @@ urlpatterns.extend(contact)
 
 contactapi=[
     path('contactapi/',include('contactapi.urls')),
+
 ]
 
 urlpatterns.extend(contactapi)
-
