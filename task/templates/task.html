@@ -1,0 +1,22 @@
+<h1> Welcome to you Personal Task List </h1>
+<form action="{%url 'tasks%}" method="POST"> 
+    {%csrf_token%}
+        Enter Task Name <input type="text" name="task" > <br>
+        Enter Task Status <input type="text" name='status' ><br>
+    <input type="submit">
+    </form>
+
+{%if data%}
+{%for datas in data%}
+<ol>
+    <li> {{datas.task}}  
+        <a href="{%url 'taskedit' datas.pk%}"> Edit</a>
+        <a href="{%url 'taskdelete' datas.pk%}"   > Delete</a>
+             
+        </li> 
+    <ul> 
+        <li> {{datas.status}}</li>
+    </ul>
+</ol>
+{%endfor%}
+{%endif%}

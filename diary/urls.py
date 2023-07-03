@@ -20,12 +20,22 @@ from clients.views import form
 from collection.views import col_form
 from modelform.views import homepage
 from apitodjango.views import apitodjango
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', form, name='form'),
     path('collection/',col_form,name='col_form'),
     path('postman/',include('postman.urls')),
 ]
+
+from task.views import tasks,taskedit,taskdelete
+task=[
+   path('task/',tasks,name='tasks'),
+   path('taskdelete/<int:pk>/',taskdelete,name='taskdelete'),
+   path('taskedit/<int:pk>/',taskedit,name='taskedit'),
+]
+
+urlpatterns.extend(task)
 
 from modelform.views import delform,editform
 

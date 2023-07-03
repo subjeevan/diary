@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'apitodjango',
     'corsheaders',
     'postman',
+    'task',
 
 ]
 
