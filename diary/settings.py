@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'contactapi',
     'rest_framework',
     'corsheaders',
+    'postman',
+
 ]
 
 MIDDLEWARE = [
